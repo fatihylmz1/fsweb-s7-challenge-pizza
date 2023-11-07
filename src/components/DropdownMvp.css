@@ -1,0 +1,19 @@
+.dropdown {
+    font-size: 16px;
+    padding: 5px;
+}
+
+/* İnce */
+.dropdown option[value="ince"] {
+    font-weight: 300;
+}
+
+/* Normal */
+.dropdown option[value="normal"] {
+    font-weight: 400;
+}
+
+/* Kalın */
+.dropdown option[value="kalın"] {
+    font-weight: 700;
+}

@@ -1,0 +1,12 @@
+.checkbox {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.checkbox.medium {
+    font-size: 24px;
+}
+
+.checkbox.large {
+    font-size: 24px;
+}

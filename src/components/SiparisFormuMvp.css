@@ -1,0 +1,210 @@
+.SiparisFormuMvp {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 120rem;
+
+
+}
+
+
+
+.BaslikSiparis {
+    text-align: center;
+
+    top: 115.6px;
+    left: 779.5px;
+    color: #FFFFFF;
+    font-size: 50px;
+}
+
+.SiparisHeader {
+    background-color: #CE2829;
+    height: 207px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.HeaderSiparisMvp {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 36.3125rem;
+    margin-left: 320px;
+}
+
+.link {
+    text-decoration: none;
+    margin-right: 20px;
+    color: white;
+}
+
+.SiparisContent {
+    width: 36.3125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pizzaismi {
+    width: 470.36px;
+
+    margin-left: 1943px;
+    margin-right: 724.82px;
+
+}
+
+.sayfaüstfiyat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 581px;
+    margin-left: 1328px;
+}
+
+.puanlama {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.aciklama {
+    display: flex;
+    flex-wrap: wrap;
+    width: 581px;
+    height: 138px;
+    margin-left: 1328px;
+}
+
+.seçim {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 581px;
+    margin-left: 1328px;
+}
+
+.ekmalzemeler {
+    width: 581px;
+    height: 182px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.malzemelistesi {
+    width: 581px;
+    height: 182px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.ürün {
+    width: 166px;
+    height: 26px;
+    gap: 11px;
+
+}
+
+.malzemeEkle {
+    margin-left: 1331px;
+}
+
+.siparisnot {
+    width: 580px;
+    height: 56px;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.not {
+
+    margin-top: 50px;
+}
+
+.line {
+    border: 1px solid #5F5F5F;
+    width: 581px;
+    color: #5F5F5F;
+    margin-top: 40px;
+    margin-right: 454px;
+}
+
+.btnMvp1 {
+    background-color: #FDC913;
+    width: 47px;
+    height: 56px;
+    border-radius: 6px 0px 0px 6px;
+}
+
+.btnMvp2 {
+    background-color: #FDC913;
+    width: 47px;
+    height: 56px;
+    border-radius: 0px 6px 6px 0px;
+}
+
+.pizzasayisi {
+    text-align: center;
+    align-content: center;
+    width: 47px;
+    height: 56px;
+    border: 1px solid #D9D9D9;
+}
+
+.counter {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 30px;
+}
+
+.siparisbilgi {
+    width: 386px;
+    height: 197px;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 29px;
+    margin-left: 51px;
+
+}
+
+.fiyatbilgisi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.siparistoplam {
+    padding-left: 78px;
+}
+
+.toplamyazi {
+    color: red;
+}
+
+.sayfasonu {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.siparisbtn {
+    width: 386px;
+    height: 62px;
+    border-radius: 6px;
+    background-color: #FDC913;
+}
