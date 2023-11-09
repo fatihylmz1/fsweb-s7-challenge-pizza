@@ -1,0 +1,340 @@
+.Anasayfa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FAF7F2;
+}
+
+
+.BaslikAdv {
+    text-align: center;
+    font-family: 'Londrina Solid', sans-serif;
+    top: 115.6px;
+    left: 779.5px;
+    color: #FFFFFF;
+    font-size: 40px;
+
+}
+
+.BaslikAltiAdv {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Lora', serif;
+    color: #FFFFFF;
+    width: 586.67px;
+    height: 154px;
+    top: 194px;
+    left: 25px;
+    font-size: 40px;
+
+
+}
+
+.anasayfaüstAdv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 586.67px;
+    height: 350px;
+
+
+
+}
+
+.headerAdv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 120rem;
+    height: 67.5rem;
+    background-image: url("./mvp-banner.png");
+
+}
+
+.btn1Adv {
+    background-color: #FDC913;
+    width: 193.27px;
+    height: 56px;
+    top: 402.27px;
+    left: 221.36px;
+    padding: 3.73px, 50.16px, 0.27px, 49.64px;
+    border-radius: 50px;
+    cursor: pointer;
+
+
+}
+
+.fırsatAdv {
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Lora', serif;
+    font-family: 'Satisfy', cursive;
+    color: #FDC913;
+    font-size: 2rem;
+    height: 0px;
+}
+
+.ikon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 76.835rem;
+    height: 2.625rem;
+    margin-left: 21rem;
+}
+
+.kart1 {
+    width: 39.75rem;
+    height: 33.484375rem;
+    border-radius: 12px;
+
+    margin-top: 80px;
+    background-image: url("./kart-1.png");
+}
+
+.btn2Adv {
+    background-color: #FFFFFF;
+    width: 193.27px;
+    height: 56px;
+    top: 402.27px;
+    left: 221.36px;
+    padding: 3.73px, 50.16px, 0.27px, 49.64px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.özellezzet {
+
+
+    font-family: 'Quattrocento', serif;
+
+    color: #FFFFFF;
+    font-size: 68px;
+
+}
+
+.lezzet {
+    width: 288px;
+    height: 148px;
+}
+
+.position {
+    color: #FFFFFF;
+    font-size: 20px;
+    margin-top: 66px;
+}
+
+.kartbilgi {
+    margin-left: 20px;
+}
+
+.kart2 {
+    background-image: url(./kart-2.png);
+    width: 636px;
+    height: 255px;
+    border-radius: 12px;
+    margin-right: 70px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 1320px;
+    height: 561px;
+    margin-left: 330px;
+}
+
+.hackathlon {
+    font-family: 'Barlow', sans-serif;
+
+    font-size: 40px;
+    color: #FFFFFF;
+}
+
+.kart3 {
+    width: 636px;
+    height: 255px;
+    background-image: url(./kart-3.png);
+    border-radius: 12px;
+}
+
+.kart2-3 {
+    margin-left: 15px;
+    margin-top: 40px;
+}
+
+.npm {
+    font-family: 'Barlow', sans-serif;
+
+    font-size: 40px;
+    color: black;
+
+}
+
+.seçenekler {
+    width: 1320px;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.iconcontainer {
+    width: 200px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.yemekler {
+    width: 1320px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.yemek1 {
+    width: 416px;
+    height: 440px;
+    background-color: white;
+    border-radius: 12px;
+    margin-top: 70px;
+    margin-left: 660px;
+}
+
+.puanlama {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 12px;
+    width: 358px;
+}
+
+.food1 {
+    margin-left: 35px;
+}
+
+.yemek2 {
+    width: 416px;
+    height: 440px;
+    background-color: white;
+    border-radius: 12px;
+    margin-top: 70px;
+
+    margin-left: 50px;
+
+}
+
+.yemek3 {
+    width: 416px;
+    height: 440px;
+    background-color: white;
+    border-radius: 12px;
+    margin-top: 70px;
+    margin-right: 89px;
+    margin-left: 50px;
+
+}
+
+.ençok {
+    margin-left: 800px;
+    margin-top: 25px;
+}
+
+.ençokyazi {
+    font-family: 'Satisfy', cursive;
+    color: #CE2829;
+    font-size: 30px;
+}
+
+.acıktıran {
+    margin-left: 550px;
+
+}
+
+.acıktıranyazi {
+    font-size: 40px;
+    text-wrap: nowrap;
+}
+
+.footer {
+    background: #1a1a1a;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    width: 120rem;
+}
+
+.iletisim {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer p {
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.footersira1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 353px;
+}
+
+.footerbaslik {
+    margin-right: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.footeryazi {
+    font-family: 'Londrina Solid', sans-serif;
+    font-size: 45px;
+}
+
+.footersira2 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-left: 150px;
+}
+
+.footersira2 p {
+    color: white;
+    text-align: start;
+
+}
+
+.sicak {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.footersira3 {
+    width: 325px;
+    height: 291px;
+    margin-left: 180px;
+    margin-top: 50px;
+
+}
+
+.footersira3 img {
+    margin: 5px 5px 5px 5px;
+}
+
+.footersira3 p {
+    text-align: start;
+    font-size: 30px;
+}

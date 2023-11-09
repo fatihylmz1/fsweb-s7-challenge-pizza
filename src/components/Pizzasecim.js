@@ -1,93 +1,92 @@
 import React, { useState, useEffect } from 'react';
 import "./SiparisFormuMvp.css";
+import { Link } from 'react-router-dom';
+import * as Yup from "yup";
+
+const malzemeler = ["Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalepeno", "Sarımsak", "Biber", "Ananas", "Kabak"];
 
 
 function Pizzasecim() {
-
-    const [isCheckedpepperoni, setIsCheckedpepperoni] = useState(false);
-    const [isCheckedtavuk, setIsCheckedtavuk] = useState(false);
-    const [isCheckedmısır, setIsCheckedmısır] = useState(false);
-    const [isCheckedsarımsak, setIsCheckedsarımsak] = useState(false);
-    const [isCheckedananas, setIsCheckedananas] = useState(false);
-    const [isCheckedsosis, setIsCheckedsosis] = useState(false);
-    const [isCheckedsoğan, setIsCheckedsoğan] = useState(false);
-    const [isCheckedsucuk, setIsCheckedsucuk] = useState(false);
-    const [isCheckedbiber, setIsCheckedbiber] = useState(false);
-    const [isCheckedkabak, setIsCheckedkabak] = useState(false);
-    const [isCheckedkanadajambon, setIsCheckedkanadajambon] = useState(false);
-    const [isCheckeddomates, setIsCheckeddomates] = useState(false);
-    const [isCheckedjalepeno, setIsCheckedjalepeno] = useState(false);
-    const [pizzafiyat, setPizzafiyat] = useState(85.50);
-    const [ekmalzemefiyat, setEkmalzemefiyat] = useState(0);
-    const [toplamfiyat, setToplamfiyat] = useState(0);
-    const [pizzasayisi, setPizzasayisi] = useState(0);
     const [inputValueisim, setInputValueisim] = useState('');
     const [inputValuenot, setInputValuenot] = useState('');
+    const [toplamfiyat, setToplamfiyat] = useState(0);
+    const [pizzasayisi, setPizzasayisi] = useState(0);
+    const [ekmalzemefiyat, setEkmalzemefiyat] = useState(0);
+    const [secilenürünler, setSecilenürünler] = useState([]);
+    const [pizzafiyat, setPizzafiyat] = useState(85.50);
+    const [isFormValid, setIsFormValid] = useState(false)
+    const [formpayload, setFormpayload] = useState({
+        name: "",
+        boyut: "",
+        pricemalzeme: "",
+        pricecounter: "",
+        özel: "",
+    });
+    const [formErrors, setFormErrors] = useState({
+        name: "",
+        pricecounter: "",
+        pricemalzeme: "",
+
+    });
+    const [formValid, setFormValid] = useState(true);
+
+
+    const formSchema = Yup.object().shape({
+        name: Yup.string()
+            .required("İsim alanı boş bırakılamaz!")
+            .min(3, "Ürün ismi 3 karakterden az olamaz."),
+        pricecounter: Yup.number().positive("Fiyat bilgisi eksi değer alamaz."),
+        pricemalzeme: Yup.number().min(20, "En az 4 adet malzeme eklemelisiniz!").max(50, "En fazla 10 malzeme ekleyebilirsiniz!")
+    });
+
+    const validateInput = (name, value) => {
+        Yup.reach(formSchema, name).validate(value)
+            .then((valid) => {
+                console.log("validateInput", valid)
+                const newErrors = {
+                    ...formErrors,
+                    [name]: null
+                }
+                setFormErrors(newErrors)
+            })
+            .catch((err) => {
+                console.log(err.name, err.errors)
+                const newErrors = {
+                    ...formErrors,
+                    [name]: err.errors[0]
+                }
+                setFormErrors(newErrors)
+            })
+    }
+
+    const validateForm = (formpayload) => {
+        formSchema.isValid(formpayload)
+            .then((valid) => {
+                console.log("validateForm", valid)
+                setIsFormValid(valid)
+            }).catch((err) => {
+                console.log("validateForm", err.name, err.errors)
+                console.log(err)
+                setIsFormValid(false)
+            })
+    }
+
+    useEffect(() => {
+        formSchema
+            .isValid(formpayload)
+            .then(valid => setFormValid(valid));
+    }, [formpayload]);
+
+
 
 
 
     function setArttır() {
         setPizzasayisi(pizzasayisi + 1);
     };
-    console.log(pizzasayisi);
+
     function setAzalt() {
         setPizzasayisi(pizzasayisi - 1);
-    };
-
-
-    const handlePepperoniChange = () => {
-        setIsCheckedpepperoni(!isCheckedpepperoni);
-        setEkmalzemefiyat(!isCheckedpepperoni ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    console.log(ekmalzemefiyat);
-
-    const handleTavukChange = () => {
-        setIsCheckedtavuk(!isCheckedtavuk);
-        setEkmalzemefiyat(!isCheckedtavuk ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handleMısırChange = () => {
-        setIsCheckedmısır(!isCheckedmısır);
-        setEkmalzemefiyat(!isCheckedmısır ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlesarımsakChange = () => {
-        setIsCheckedsarımsak(!isCheckedsarımsak);
-        setEkmalzemefiyat(!isCheckedsarımsak ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handleananasChange = () => {
-        setIsCheckedananas(!isCheckedananas);
-        setEkmalzemefiyat(!isCheckedananas ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlesosisChange = () => {
-        setIsCheckedsosis(!isCheckedsosis);
-        setEkmalzemefiyat(!isCheckedsosis ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlesoğanChange = () => {
-        setIsCheckedsoğan(!isCheckedsoğan);
-        setEkmalzemefiyat(!isCheckedsoğan ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlesucukChange = () => {
-        setIsCheckedsucuk(!isCheckedsucuk);
-        setEkmalzemefiyat(!isCheckedsucuk ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlebiberChange = () => {
-        setIsCheckedbiber(!isCheckedbiber);
-        setEkmalzemefiyat(!isCheckedbiber ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlekabakChange = () => {
-        setIsCheckedkabak(!isCheckedkabak);
-        setEkmalzemefiyat(!isCheckedkabak ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlekanadajambonuChange = () => {
-        setIsCheckedkanadajambon(!isCheckedkanadajambon);
-        setEkmalzemefiyat(!isCheckedkanadajambon ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handledomatesChange = () => {
-        setIsCheckeddomates(!isCheckeddomates);
-        setEkmalzemefiyat(!isCheckeddomates ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
-    };
-    const handlejalepenoChange = () => {
-        setIsCheckedjalepeno(!isCheckedjalepeno);
-        setEkmalzemefiyat(!isCheckedjalepeno ? ekmalzemefiyat + 5 : ekmalzemefiyat - 5);
     };
     const handleChangeisim = (e) => {
         setInputValueisim(e.target.value);
@@ -95,6 +94,21 @@ function Pizzasecim() {
     const handleChangenot = (e) => {
         setInputValuenot(e.target.value);
     };
+
+    const handleChange = (e, malzeme) => {
+        setSecilenürünler({ ...secilenürünler, [malzeme]: e.target.checked });
+
+    }
+
+
+    useEffect(() => {
+        let truearray = Object.values(secilenürünler);
+        let malzemeler = truearray.filter((item) => item === true);
+        setFormpayload({ secilenürünler });
+        setEkmalzemefiyat(malzemeler.length * 5);
+    }, [secilenürünler]);
+
+
     useEffect(() => {
         setToplamfiyat(pizzafiyat * pizzasayisi + ekmalzemefiyat)
 
@@ -102,121 +116,27 @@ function Pizzasecim() {
 
 
 
+
+
     return (
         <div>
-            <form className='malzemelistesi'>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedpepperoni}
-                        onChange={handlePepperoniChange}
+            <div className='malzemelistesi'>
+                {malzemeler.map((malzeme) => (
+                    <label className='ürün'>
+                        <input
+                            type="checkbox"
+                            name="ekmalzemeler"
+                            onChange={(e) => handleChange(e, malzeme)}
+                        />
+                        {malzeme}
+                    </label>))}
+            </div>
 
-                    />
-                    Pepperoni
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedtavuk}
-                        onChange={handleTavukChange}
-                    />
-                    Tavuk Izgara
-                </label >
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedmısır}
-                        onChange={handleMısırChange}
-                    />
-                    Mısır
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedsarımsak}
-                        onChange={handlesarımsakChange}
-                    />
-                    Sarımsak
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedananas}
-                        onChange={handleananasChange}
-                    />
-                    Ananas
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedsosis}
-                        onChange={handlesosisChange}
-                    />
-                    Sosis
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedsoğan}
-                        onChange={handlesoğanChange}
-                    />
-                    Soğan
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedsucuk}
-                        onChange={handlesucukChange}
-                    />
-                    Sucuk
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedbiber}
-                        onChange={handlebiberChange}
-                    />
-                    Biber
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedkabak}
-                        onChange={handlekabakChange}
-                    />
-                    Kabak
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedkanadajambon}
-                        onChange={handlekanadajambonuChange}
-                    />
-                    Kanada Jambonu
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckeddomates}
-                        onChange={handledomatesChange}
-                    />
-                    Domates
-                </label>
-                <label className='ürün'>
-                    <input
-                        type="checkbox"
-                        checked={isCheckedjalepeno}
-                        onChange={handlejalepenoChange}
-                    />
-                    Jalepeno
-                </label>
-
-            </form>
             <div className="not">
                 <div>
                     <label>
                         <div><strong>Müşteri Adı</strong></div>
-                        <input type="text" value={inputValueisim} onChange={handleChangeisim} className='siparisnot' placeholder='Lütfen müşteri adı giriniz.' />
+                        <input type="text" value={inputValueisim} onChange={handleChangeisim} className='siparisnot' placeholder='Lütfen müşteri adı giriniz.' id='name-input' invalid={!!formErrors.name} />
                     </label>
                 </div>
             </div>
@@ -226,11 +146,12 @@ function Pizzasecim() {
                 <div>
                     <label>
                         <div><strong>Sipariş Notu</strong></div>
-                        <input type="text" value={inputValuenot} onChange={handleChangenot} className='siparisnot' placeholder='Siparişinize eklemek istediğiniz bir not var mı?' />
+                        <input type="text" value={inputValuenot} onChange={handleChangenot} className='siparisnot' placeholder='Siparişinize eklemek istediğiniz bir not var mı?' id='special-text' />
                     </label>
                 </div>
                 <hr className="line" />
             </div>
+
 
             <div className='sayfasonu'>
                 <div className="counter">
@@ -241,19 +162,27 @@ function Pizzasecim() {
 
 
                 <div className='siparisbilgi'>
+
                     <div className='siparistoplam'><p><strong>Sipariş Toplamı</strong></p></div>
                     <div className='fiyatbilgisi'>
                         <div><p>Seçimler</p></div>
                         <div><p>{ekmalzemefiyat} TL</p></div>
-
                     </div>
+
+
+
                     <div className='fiyatbilgisi'>
                         <div><p className='toplamyazi'>Toplam</p></div>
-                        <div><p>{toplamfiyat} TL</p></div>
+                        <div><p className='toplamyazi'>{toplamfiyat} TL</p></div>
                     </div>
+
+
                     <div>
-                        <button className='siparisbtn'>SİPARİŞ VER</button>
+                        <Link to="./siparisonay">
+                            <button className='siparisbtn' id='order-button'>SİPARİŞ VER</button>
+                        </Link>
                     </div>
+
 
                 </div>
             </div>

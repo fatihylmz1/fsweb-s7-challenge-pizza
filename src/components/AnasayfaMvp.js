@@ -1,6 +1,7 @@
 import React from "react";
 import "./AnasayfaMvp.css";
 import resim1 from "./banner.png"
+import { Link } from "react-router-dom";
 
 function AnasayfaMvp() {
     return (
@@ -10,7 +11,10 @@ function AnasayfaMvp() {
                 <div className="anasayfaüst">
                     <h1 className="Baslik">Teknolojik Yemekler</h1>
                     <p className="BaslikAlti">KOD ACIKTIRIR<br />PIZZA, DOYURUR</p>
-                    <button className="btn1">ACIKTIM</button>
+                    <Link to="./pizza">
+                        <button className="btn1">ACIKTIM</button>
+                    </Link>
+
                 </div>
             </div>
             <div className="pizzafoto">

@@ -5,13 +5,16 @@ import AnasayfaMvp from "./components/AnasayfaMvp";
 import SiparisFormuMvp from "./components/SiparisFormuMvp";
 import { Switch, Route } from "react-router-dom";
 import SiparisOnayi from "./components/SiparisOnayiMvp";
+import AnasayfaAdv from "./components/ADV-Tasarım/AnasayfaAdv";
+import SiparisFormuAdv from "./components/ADV-Tasarım/SiparisFormuAdv";
+
 
 
 
 const App = () => {
 
   return (<div>
-    <SiparisOnayi />
+    <SiparisFormuAdv />
   </div>
 
 
@@ -28,10 +31,16 @@ export default App;
       <Route path="/pizza" exact>
         <SiparisFormuMvp />
       </Route>
+      <Route path="/siparisonay" exact>
+        <SiparisOnayi />
+      </Route>
+
 
       <Route path="*">
         <h1>ARADIĞINIZ SAYFA BULUNAMADI!!</h1>
       </Route>
-    </Switch> 
+
+
+    </Switch>
     */
 
