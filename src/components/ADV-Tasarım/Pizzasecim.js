@@ -10,7 +10,7 @@ function Pizzasecim() {
     const [inputValueisim, setInputValueisim] = useState('');
     const [inputValuenot, setInputValuenot] = useState('');
     const [toplamfiyat, setToplamfiyat] = useState(0);
-    const [pizzasayisi, setPizzasayisi] = useState(0);
+    const [pizzasayisi, setPizzasayisi] = useState(1);
     const [ekmalzemefiyat, setEkmalzemefiyat] = useState(0);
     const [secilenürünler, setSecilenürünler] = useState([]);
     const [pizzafiyat, setPizzafiyat] = useState(85.50);
@@ -91,12 +91,9 @@ function Pizzasecim() {
     const handleChangeisim = (e) => {
         setInputValueisim(e.target.value);
 
-
-
-
-
         console.log(formpayload);
     };
+
     const handleChangenot = (e) => {
         setInputValuenot(e.target.value);
 
@@ -122,29 +119,13 @@ function Pizzasecim() {
 
     }, [ekmalzemefiyat, pizzafiyat, pizzasayisi]);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormpayload((prevData) => ({
-            ...prevData,
-            [name]: value,
-        }));
-    };
-    useEffect(() => {
-        console.log(formpayload);
-
-    }, [formpayload]);
-
-
-
-
-
-
     return (
         <div>
             <div className='malzemelistesiadv'>
                 {malzemeler.map((malzeme) => (
                     <label className='ürünadv'>
                         <input
+                            id='checkbox'
                             type="checkbox"
                             name="ekmalzemeler"
                             onChange={(e) => handleChange(e, malzeme)}
@@ -177,7 +158,7 @@ function Pizzasecim() {
 
             <div className='sayfasonuadv'>
                 <div className="counteradv">
-                    <button onClick={setArttır} className="btnMvp1adv">+</button>
+                    <button onClick={setArttır} className="btnMvp1adv" id='arttirbtn'>+</button>
                     <div className="pizzasayisiadv"><p>{pizzasayisi}</p></div>
                     <button onClick={setAzalt} className="btnMvp2adv">-</button>
                 </div>
@@ -195,7 +176,7 @@ function Pizzasecim() {
 
                     <div className='fiyatbilgisiadv'>
                         <div><p className='toplamyaziadv'>Toplam</p></div>
-                        <div><p className='toplamyaziadv'>{toplamfiyat} TL</p></div>
+                        <div><p className='toplamyaziadv' id='fiyat'>{toplamfiyat} TL</p></div>
                     </div>
 
 

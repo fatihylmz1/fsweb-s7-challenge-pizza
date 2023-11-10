@@ -32,7 +32,7 @@ function AnasayfaAdv() {
                     <p className="fırsatAdv">fırsatı kaçırma</p>
                     <p className="BaslikAltiAdv">KOD ACIKTIRIR<br />PIZZA, DOYURUR</p>
                     <Link to="./pizza">
-                        <button className="btn1Adv">ACIKTIM</button>
+                        <button className="btn1Adv" data-cy="btn1">ACIKTIM</button>
                     </Link>
                 </div>
             </div>
