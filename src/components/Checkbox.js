@@ -1,5 +1,5 @@
 import React from 'react';
-import './CheckboxMvp.css';
+import './Checkbox.css';
 
 const Checkbox = ({ size, label, checked, onChange }) => {
     const checkboxClass = `checkbox ${size} ${checked ? 'checked' : ''}`;

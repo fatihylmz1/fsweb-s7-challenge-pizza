@@ -31,7 +31,7 @@ function AnasayfaAdv() {
                     <h1 className="BaslikAdv">Teknolojik Yemekler</h1>
                     <p className="fırsatAdv">fırsatı kaçırma</p>
                     <p className="BaslikAltiAdv">KOD ACIKTIRIR<br />PIZZA, DOYURUR</p>
-                    <Link to="./pizzaadv">
+                    <Link to="./pizza">
                         <button className="btn1Adv">ACIKTIM</button>
                     </Link>
                 </div>
@@ -57,7 +57,7 @@ function AnasayfaAdv() {
                     <div className="kartbilgi">
                         <div className="lezzet"><p className="özellezzet">Özel<br />Lezzetus</p></div>
                         <div><p className="position">Position:Absolute Acı Burger</p></div>
-                        <Link to="./pizzaadv">
+                        <Link to="./pizza">
                             <button className="btn2Adv">Sipariş Ver</button>
                         </Link>
                     </div>
@@ -68,7 +68,7 @@ function AnasayfaAdv() {
                     <div className="kart2">
                         <div className="karbilgi2">
                             <div><p className="hackathlon">Hackathlon<br />Burger Menu</p></div>
-                            <Link to="./pizzaadv">
+                            <Link to="./pizza">
                                 <button className="btn2Adv">Sipariş Ver</button>
                             </Link>
                         </div>
@@ -76,7 +76,7 @@ function AnasayfaAdv() {
                     <div className="kart3">
                         <div className="kartbilgi3">
                             <div className="npm"><p>Çoooook hızlı<br />npm gibi kurye</p></div>
-                            <Link to="./pizzaadv">
+                            <Link to="./pizza">
                                 <button className="btn2Adv">Sipariş Ver</button>
                             </Link>
                         </div>

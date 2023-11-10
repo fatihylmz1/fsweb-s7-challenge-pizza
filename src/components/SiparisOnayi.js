@@ -1,5 +1,5 @@
 import React from "react";
-import "./SiparisOnayiMvp.css";
+import "./SiparisOnayi.css";
 
 function SiparisOnayi() {
     return (

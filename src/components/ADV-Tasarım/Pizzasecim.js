@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./SiparisFormuMvp.css";
+import "./SiparisFormuAdv.css";
 import { Link } from 'react-router-dom';
 import * as Yup from "yup";
 
@@ -15,13 +15,13 @@ function Pizzasecim() {
     const [secilenürünler, setSecilenürünler] = useState([]);
     const [pizzafiyat, setPizzafiyat] = useState(85.50);
     const [isFormValid, setIsFormValid] = useState(false)
-    const [formpayload, setFormpayload] = useState({
-        name: "",
-        boyut: "",
-        pricemalzeme: "",
-        pricecounter: "",
-        özel: "",
-    });
+    const [formpayload, setFormpayload] = useState(
+        {
+            name: "",
+            pricemalzeme: "",
+            pricecounter: "",
+            özel: "",
+        });
     const [formErrors, setFormErrors] = useState({
         name: "",
         pricecounter: "",
@@ -90,9 +90,16 @@ function Pizzasecim() {
     };
     const handleChangeisim = (e) => {
         setInputValueisim(e.target.value);
+
+
+
+
+
+        console.log(formpayload);
     };
     const handleChangenot = (e) => {
         setInputValuenot(e.target.value);
+
     };
 
     const handleChange = (e, malzeme) => {
@@ -103,8 +110,9 @@ function Pizzasecim() {
 
     useEffect(() => {
         let truearray = Object.values(secilenürünler);
+        let ürünler = Object.keys(secilenürünler);
         let malzemeler = truearray.filter((item) => item === true);
-        setFormpayload({ secilenürünler });
+        setFormpayload({ ürünler });
         setEkmalzemefiyat(malzemeler.length * 5);
     }, [secilenürünler]);
 
@@ -114,72 +122,86 @@ function Pizzasecim() {
 
     }, [ekmalzemefiyat, pizzafiyat, pizzasayisi]);
 
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormpayload((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+    useEffect(() => {
+        console.log(formpayload);
+
+    }, [formpayload]);
+
+
 
 
 
 
     return (
         <div>
-            <div className='malzemelistesi'>
+            <div className='malzemelistesiadv'>
                 {malzemeler.map((malzeme) => (
-                    <label className='ürün'>
+                    <label className='ürünadv'>
                         <input
                             type="checkbox"
                             name="ekmalzemeler"
                             onChange={(e) => handleChange(e, malzeme)}
+
                         />
                         {malzeme}
                     </label>))}
             </div>
 
-            <div className="not">
+            <div className="notadv">
                 <div>
                     <label>
                         <div><strong>Müşteri Adı</strong></div>
-                        <input type="text" value={inputValueisim} onChange={handleChangeisim} className='siparisnot' placeholder='Lütfen müşteri adı giriniz.' id='name-input' invalid={!!formErrors.name} />
+                        <input type="text" value={formpayload.name} onChange={handleChangeisim} className='siparisnotadv' placeholder='Lütfen müşteri adı giriniz.' id='name-input' invalid={!!formErrors.name} />
                     </label>
                 </div>
             </div>
 
 
-            <div className="not">
+            <div className="notadv">
                 <div>
                     <label>
                         <div><strong>Sipariş Notu</strong></div>
-                        <input type="text" value={inputValuenot} onChange={handleChangenot} className='siparisnot' placeholder='Siparişinize eklemek istediğiniz bir not var mı?' id='special-text' />
+                        <input type="text" value={formpayload.özel} onChange={handleChangenot} className='siparisnotadv' placeholder='Siparişinize eklemek istediğiniz bir not var mı?' id='special-text' />
                     </label>
                 </div>
-                <hr className="line" />
+                <hr className="lineadv" />
             </div>
 
 
-            <div className='sayfasonu'>
-                <div className="counter">
-                    <button onClick={setArttır} className="btnMvp1">+</button>
-                    <div className="pizzasayisi"><p>{pizzasayisi}</p></div>
-                    <button onClick={setAzalt} className="btnMvp2">-</button>
+            <div className='sayfasonuadv'>
+                <div className="counteradv">
+                    <button onClick={setArttır} className="btnMvp1adv">+</button>
+                    <div className="pizzasayisiadv"><p>{pizzasayisi}</p></div>
+                    <button onClick={setAzalt} className="btnMvp2adv">-</button>
                 </div>
 
 
-                <div className='siparisbilgi'>
+                <div className='siparisbilgiadv'>
 
-                    <div className='siparistoplam'><p><strong>Sipariş Toplamı</strong></p></div>
-                    <div className='fiyatbilgisi'>
+                    <div className='siparistoplamadv'><p><strong>Sipariş Toplamı</strong></p></div>
+                    <div className='fiyatbilgisiadv'>
                         <div><p>Seçimler</p></div>
                         <div><p>{ekmalzemefiyat} TL</p></div>
                     </div>
 
 
 
-                    <div className='fiyatbilgisi'>
-                        <div><p className='toplamyazi'>Toplam</p></div>
-                        <div><p className='toplamyazi'>{toplamfiyat} TL</p></div>
+                    <div className='fiyatbilgisiadv'>
+                        <div><p className='toplamyaziadv'>Toplam</p></div>
+                        <div><p className='toplamyaziadv'>{toplamfiyat} TL</p></div>
                     </div>
 
 
                     <div>
                         <Link to="./siparisonay">
-                            <button className='siparisbtn' id='order-button'>SİPARİŞ VER</button>
+                            <button className='siparisbtnadv' id='order-buttonadv'>SİPARİŞ VER</button>
                         </Link>
                     </div>
 

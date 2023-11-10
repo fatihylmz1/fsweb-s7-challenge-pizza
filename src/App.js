@@ -1,10 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "./App.css";
-import AnasayfaMvp from "./components/AnasayfaMvp";
-import SiparisFormuMvp from "./components/SiparisFormuMvp";
 import { Switch, Route } from "react-router-dom";
-import SiparisOnayi from "./components/SiparisOnayiMvp";
+import SiparisOnayi from "./components/SiparisOnayi";
 import AnasayfaAdv from "./components/ADV-Tasarım/AnasayfaAdv";
 import SiparisFormuAdv from "./components/ADV-Tasarım/SiparisFormuAdv";
 
@@ -13,23 +11,16 @@ import SiparisFormuAdv from "./components/ADV-Tasarım/SiparisFormuAdv";
 
 const App = () => {
 
+
+
   return (<div>
-    <SiparisFormuAdv />
-  </div>
-
-
-  );
-};
-export default App;
-/*
-
     <Switch>
       <Route path="/" exact>
-        <AnasayfaMvp />
+        <AnasayfaAdv />
       </Route>
 
       <Route path="/pizza" exact>
-        <SiparisFormuMvp />
+        <SiparisFormuAdv />
       </Route>
       <Route path="/siparisonay" exact>
         <SiparisOnayi />
@@ -42,5 +33,11 @@ export default App;
 
 
     </Switch>
-    */
+  </div>
+
+
+  );
+};
+export default App;
+
 

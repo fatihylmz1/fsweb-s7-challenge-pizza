@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DropdownMvp.css'; // Dropdown stili içeren CSS dosyası
+import './Dropdown.css';
 
 const Dropdown = ({ onChange }) => {
     const [selectedValue, setSelectedValue] = useState(null);
