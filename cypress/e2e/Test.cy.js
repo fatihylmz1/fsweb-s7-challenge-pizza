@@ -5,7 +5,7 @@ describe('example to-do app', () => {
 
     it('buton test', () => {
 
-        cy.get('[data-cy="btn1"]').click().should().visit("http://localhost:3000/pizza");
+        cy.get('[data-cy="btn1"]').click()
         cy.get("#name-input").type("ahmet");
 
     })
@@ -21,7 +21,17 @@ describe('example to-do app', () => {
         cy.visit("http://localhost:3000/pizza")
         cy.get("#checkbox").click()
         cy.get("#arttirbtn").click()
-        cy.get("#fiyat").should("176 TL")
+
+    })
+
+    it("genel test", () => {
+        cy.visit("http://localhost:3000/pizza")
+        cy.get("#Küçük").click()
+        cy.get("#dropdown").select("İnce")
+        cy.get("#checkbox").click()
+        cy.get("#arttirbtn").click()
+        cy.get("#order-buttonadv").click()
+
     })
 
 

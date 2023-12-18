@@ -163,10 +163,6 @@ function SiparisFormuAdv({ }) {
                     <img src={insta6} alt="insta6" />
                 </div>
 
-
-
-
-
             </footer >
 
 

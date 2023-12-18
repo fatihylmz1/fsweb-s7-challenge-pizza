@@ -11,9 +11,9 @@ const Dropdown = ({ onChange }) => {
     };
 
     return (
-        <select value={selectedValue} onChange={handleChange} className="dropdown">
+        <select value={selectedValue} onChange={handleChange} className="dropdown" id='dropdown'>
             <option value="">Hamur Kalınlığı</option>
-            <option value="ince">İnce</option>
+            <option value="ince" id='ince'>İnce</option>
             <option value="normal">Normal</option>
             <option value="kalın">Kalın</option>
         </select>
