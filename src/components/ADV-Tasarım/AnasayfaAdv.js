@@ -86,7 +86,7 @@ function AnasayfaAdv() {
             <div className="seçenekler">
                 <div className="ençok"><p className="ençokyazi">en çok paketlenen menüler</p></div>
                 <div className="acıktıran"><p className="acıktıranyazi"><strong>ACIKTIRAN KODLARA DOYURAN LEZZETLER</strong></p></div>
-                <div className="ikon">
+                <div className="ikon2">
                     <div className="iconcontainer"><img src={ikon1} alt="ikon1" />
                         <div><p>Ramen</p></div></div>
 
@@ -185,77 +185,8 @@ function AnasayfaAdv() {
                     <img src={insta5} alt="insta5" />
                     <img src={insta6} alt="insta6" />
                 </div>
-
-
-
-
-
             </footer >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div >
     )
 }
 export default AnasayfaAdv;
-/*
-<div class="footer">
-                   <div className="footer1">
-
-
-
-
-                       <div className="footer1">
-                           <p>TEKNOLOJİK YEMEKLER</p>
-                           <div class="row">
-                               <a href="#"><i class="fa fa-facebook"></i></a>
-                               <a href="#"><i class="fa fa-instagram"></i></a>
-                               <a href="#"><i class="fa fa-youtube"></i></a>
-                               <a href="#"><i class="fa fa-twitter"></i></a>
-                           </div>
-
-                           <div class="row">
-                               <ul>
-                                   <li><Link to="https://duckduckgo.com/?q=istanbul&atb=v367-7__&ia=web&iaxm=about" className="text-black pr-15  hover:text-red no-underline">
-                                       <img className="inline pr-5" src={iletisim1}></img>
-                                       341 Londonderry Road,<div>
-                                           Istanbul Türkiye
-                                       </div>
-                                   </Link>
-                                       <Link to="" className="text-black pr-15  hover:text-red no-underline">
-                                           <img className="inline pr-5" src={iletisim2}></img>
-                                           aciktim@teknolojikyemekler.com
-                                       </Link>
-                                       <Link to="" className="text-black pr-15  hover:text-red no-underline">
-                                           <img className="inline pr-5" src={iletisim3}></img>
-                                           +90 216 123 45 67
-                                       </Link></li>
-
-                               </ul>
-                           </div>
-                       </div>
-                       <div>
-                           <p>Sıccacık Menüler</p>
-                       </div>
-
-                       <div>
-                           <p>Instagram</p>
-                       </div>
-
-
-                       <div class="row">
-                           © 2023 Teknolojik Yemekler
-                       </div>
-                   </div>
-               </div> */
